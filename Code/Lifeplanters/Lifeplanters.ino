@@ -1,21 +1,25 @@
 #include <Wire.h>
 #include <I2CSoilMoistureSensor.h>
 // Constants
+#define PUMP_PIN 13 //specifying which digital pin controls the pump
 #define MOIST_SIZE 5
 #define LIGHT_SIZE 5
 #define TEMP_SIZE 5
 
+#define SENSOR1_ADDR 0x20
+
+#define null -1234
 // constructors
-I2CSoilMoistureSensor soilSensor1 (0x20); // 0x20 is the default address of the sensor. need to add more addresses for more sensors
+I2CSoilMoistureSensor soilSensor1 (SENSOR1_ADDR); // 0x20 is the default address of the sensor. need to add more addresses for more sensors
 
 // global arrays to store data
-int raw_moisture[MOIST_SIZE], raw_light[LIGHT_SIZE], raw_temp[TEMP_SIZE];
+uint32_t raw_moisture[MOIST_SIZE], raw_light[LIGHT_SIZE], raw_temp[TEMP_SIZE];
 
 
 // variables
   // raw_reading array indexes
   uint8_t raw_moist_index=0, raw_light_index=0, raw_temp_index=0;
-  int filter_moist, filter_light, filter_temp;
+  float filter_moist, filter_light, filter_temp;
 
 
   
@@ -41,7 +45,6 @@ void setup() {
   init_nullarr(raw_moisture, MOIST_SIZE);
   init_nullarr(raw_light, LIGHT_SIZE);
   init_nullarr(raw_temp, TEMP_SIZE);
-
 }
 
 void loop() {

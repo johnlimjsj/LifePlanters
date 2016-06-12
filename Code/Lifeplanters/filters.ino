@@ -8,16 +8,16 @@
 /* @param: takes ina pointer to an array with size of 5. 
  
  */
-#define null -1234
 
 
 
 
 
-int mov_avg(int raw_reading[], int arr_data_size)
+
+float mov_avg(uint32_t raw_reading[], uint8_t arr_data_size)
 {
   int i, sum=0;
-  int filtered_reading;
+  float filtered_reading;
 
   for (i=0; i<arr_data_size; ++i) {  
     if(raw_reading[i] != null){ sum += raw_reading[i];  }
@@ -35,7 +35,7 @@ int mov_avg(int raw_reading[], int arr_data_size)
 // to determine array size
 
 // initialize array to NULL
-void init_nullarr(int my_array[], int arr_data_size)
+void init_nullarr(uint32_t my_array[], uint8_t arr_data_size)
 { int i;
   for (i=0; i<arr_data_size; ++i) { my_array[i] = null;  }
 }
