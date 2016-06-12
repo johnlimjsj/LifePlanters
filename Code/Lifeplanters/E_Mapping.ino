@@ -5,6 +5,9 @@
 float mapping(int out_min, int out_max, long in_reading, long in_min, long in_max, uint8_t mode)
 {
   float out_reading;
+  // Saturation limits
+  if(in_reading>in_max){in_reading = in_max;}
+  if(in_reading<in_max){in_reading = in_min;}
   switch(mode)
   {
     case 1:{        

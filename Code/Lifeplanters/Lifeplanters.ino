@@ -4,15 +4,26 @@
 #define PUMP1_PIN 13 //specifying which digital pin controls the pump
 #define LIGHT1_PIN 9 //this must be a PWM pin
 #define PH_PIN A1;
-#define MOIST_SIZE 5
-#define LIGHT_SIZE 5
-#define TEMP_SIZE 5
+
 
 #define SENSOR1_ADDR 0x20
 
 #define null -1234
 
-#define LOOP_TIME 10000 //this is loop time in milli seconds
+#define LOOP_TIME 100000 //this is loop time in milli seconds
+
+
+const uint8_t MOIST_SIZE=5;
+const uint8_t LIGHT_SIZE=5;
+const uint8_t TEMP_SIZE=5;
+
+// PID constants
+const int kp_m=1, ki_m=0, kd_m=0;
+
+
+// mapping limits
+const int in_min_moist=0, in_max_moist=100, out_min_moist=-100, out_max_moist=100; 
+
 // constructors
 I2CSoilMoistureSensor soilSensor1 (SENSOR1_ADDR); // 0x20 is the default address of the sensor. need to add more addresses for more sensors
 
@@ -53,8 +64,8 @@ void setup() {
 }
 
 void loop() {
-  control("pump", PUMP1_PIN, 60.00); // moisture in percentage
-  control("light", LIGHT1_PIN, 50.55); // light in percentage
+  control_1("pump", PUMP1_PIN, 60.00); // moisture in percentage
+  control_1("light", LIGHT1_PIN, 50.55); // light in percentage
 
 }
 
