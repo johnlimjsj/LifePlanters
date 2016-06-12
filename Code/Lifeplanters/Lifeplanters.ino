@@ -67,6 +67,7 @@ void loop() {
   control_1("pump", PUMP1_PIN, 60.00); // moisture in percentage
   control_1("light", LIGHT1_PIN, 50.55); // light in percentage
 
+
 }
 
 // to initialize null arrays

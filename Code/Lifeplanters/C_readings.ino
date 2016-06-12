@@ -4,8 +4,8 @@
 void readMoisture()
 {
   raw_moisture[raw_moist_index] = soilSensor1.getCapacitance();
-  raw_moist_index++;
-  filter_moist = mov_avg(raw_moisture, MOIST_SIZE);
+  raw_moist_index++;                  // <<<<<<<<<<<<<<<<<<<<<<< Breaks when index is larger than declared size
+  filter_moist = mov_avg(raw_moisture, MOIST_SIZE); 
 }
 
 void readLight()
