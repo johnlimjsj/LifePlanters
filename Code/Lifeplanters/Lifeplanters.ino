@@ -1,7 +1,9 @@
 #include <Wire.h>
 #include <I2CSoilMoistureSensor.h>
 // Constants
-#define PUMP_PIN 13 //specifying which digital pin controls the pump
+#define PUMP1_PIN 13 //specifying which digital pin controls the pump
+#define LIGHT1_PIN 9 //this must be a PWM pin
+#define PH_PIN A1;
 #define MOIST_SIZE 5
 #define LIGHT_SIZE 5
 #define TEMP_SIZE 5
@@ -9,6 +11,8 @@
 #define SENSOR1_ADDR 0x20
 
 #define null -1234
+
+#define LOOP_TIME 10000 //this is loop time in milli seconds
 // constructors
 I2CSoilMoistureSensor soilSensor1 (SENSOR1_ADDR); // 0x20 is the default address of the sensor. need to add more addresses for more sensors
 
@@ -16,13 +20,12 @@ I2CSoilMoistureSensor soilSensor1 (SENSOR1_ADDR); // 0x20 is the default address
 uint32_t raw_moisture[MOIST_SIZE], raw_light[LIGHT_SIZE], raw_temp[TEMP_SIZE];
 
 
-// variables
-  // raw_reading array indexes
-  uint8_t raw_moist_index=0, raw_light_index=0, raw_temp_index=0;
-  float filter_moist, filter_light, filter_temp;
+// raw_reading array indexes
+uint8_t raw_moist_index=0, raw_light_index=0, raw_temp_index=0;
+float filter_moist, filter_light, filter_temp;
 
-
-  
+int last_err=0;
+int err_sum=0;
 
 void setup() {
   
@@ -39,7 +42,9 @@ void setup() {
   Serial.print("Sensor Firmware version: ");
   Serial.println(soilSensor1.getVersion(),HEX);
   Serial.println();
-
+  
+  // configuring digital pins
+  pinMode(PUMP1_PIN, OUTPUT);
 
   // initializing arrays to null
   init_nullarr(raw_moisture, MOIST_SIZE);
@@ -48,17 +53,14 @@ void setup() {
 }
 
 void loop() {
-  // Reading data:
-/*  Serial.print("Soil Moisture Capacitance: ");
-  Serial.print(sensor.getCapacitance()); //read capacitance register
-  Serial.print(", Temperature: ");
-  Serial.print(sensor.getTemperature()/(float)10); //temperature register
-  Serial.print(", Light: ");
-  Serial.println(sensor.getLight(true)); //request light measurement, wait and read light register
-*/
-
-
-
-
+  control("pump", PUMP1_PIN, 60.00); // moisture in percentage
+  control("light", LIGHT1_PIN, 50.55); // light in percentage
 
 }
+
+// to initialize null arrays
+void init_nullarr(uint32_t my_array[], uint8_t arr_data_size)
+{ int i;
+  for (i=0; i<arr_data_size; ++i) { my_array[i] = null;  }
+}
+
