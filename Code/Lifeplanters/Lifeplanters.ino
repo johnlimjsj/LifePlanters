@@ -53,8 +53,8 @@ void setup() {
 }
 
 void loop() {
-  control("pump", PUMP1_PIN, 60.00); // moisture in percentage
-  control("light", LIGHT1_PIN, 50.55); // light in percentage
+  control("pump", PUMP1_PIN, 60.00); // moisture in percentage    <<<<<<<<<<<< If the read moisture is larger than the desired mositure, we do not want to turn the pump on.
+  control("light", LIGHT1_PIN, 50.55); // light in percentage     <<<<<<<<<<<< If the light sense is larger than the desired value, we want to dim the lights 
 
 }
 

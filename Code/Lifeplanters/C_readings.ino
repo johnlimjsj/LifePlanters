@@ -4,14 +4,14 @@
 void readMoisture()
 {
   raw_moisture[raw_moist_index] = soilSensor1.getCapacitance();
-  raw_moist_index++;
-  filter_moist = mov_avg(raw_moisture, MOIST_SIZE);
+  raw_moist_index++;                  // <<<<<<<<<<<<<<<<<<<<<<< Breaks when index is larger than declared size
+  filter_moist = mov_avg(raw_moisture, MOIST_SIZE); 
 }
 
 void readLight()
 {
   raw_light[raw_light_index] = soilSensor1.getLight(true); //when .getLight(bool) takes in a TRUE, it reads the light for 3 seconds before returning the value. This means that if the array size is 5, if takes 15 seconds to filter the data. take note
-  raw_light_index++;
+  raw_light_index++;    // <<<<<<<<<<<<<<<<<<<<<<< Might break when index goes out of range
   filter_light = mov_avg(raw_light, LIGHT_SIZE);
 }
 
