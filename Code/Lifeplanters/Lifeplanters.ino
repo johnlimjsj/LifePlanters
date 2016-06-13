@@ -12,6 +12,7 @@
 
 #define LOOP_TIME 100000 //this is loop time in milli seconds
 
+long last_time=0;
 
 const uint8_t MOIST_SIZE=5;
 const uint8_t LIGHT_SIZE=5;

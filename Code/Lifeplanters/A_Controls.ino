@@ -9,7 +9,7 @@ void control_1(String device, byte device_num, float desired_output)
       
       int pid_out = PID(1, 0, 0, desired_output, curr_reading);
       int pump_time = (int)mapping(0, LOOP_TIME, pid_out, -100, 100, 5);// (out_min, out_max, input_reading, in_min, in_max, mode)
-      pump(device_num, pump_time);
+      pump1(device_num, pump_time);
   }
   else if(device =="light")
   {  readLight();
@@ -42,7 +42,7 @@ void control_1b(String device, byte device_num, float &desired_output)
   int process_var = (int)mapping(*point_outmin, *point_outmax, pid_out, *point_inmin, *point_inmax, mode);
   
   // device actuation
-  pump(device_num, process_var); // process_var is percentage, multiplied by a reduction factor in the code. 
+  pump1(device_num, process_var); // process_var is percentage, multiplied by a reduction factor in the code. 
 }
 
 
