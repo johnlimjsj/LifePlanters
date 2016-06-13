@@ -18,7 +18,7 @@ void control_1(String device, byte device_num, float desired_output)
   }
 }
 
-// Controller 1b: using more general code
+// Controller 1b: using more general code with pointers
 void control_1b(String device, byte device_num, float &desired_output)
 { // pointers so I dont have to repeat myself
   uint8_t *point_index;
@@ -41,8 +41,12 @@ void control_1b(String device, byte device_num, float &desired_output)
   int pid_out = PID(*point_kp, *point_ki, *point_kd, desired_output, curr_reading);
   int process_var = (int)mapping(*point_outmin, *point_outmax, pid_out, *point_inmin, *point_inmax, mode);
   
-  // device actuation
-  pump1(device_num, process_var); // process_var is percentage, multiplied by a reduction factor in the code. 
+    // device actuation
+  if(device=="pump")
+  { //pump1(device_num, process_var); // process_var is percentage, multiplied by a reduction factor in the code. 
+    pump2(device_num, desired_output, curr_reading); // what pump 2 does is that it turns pump on once moisture falls below a threshold. And then stops until the moisture reaches the desired. 
+  }
+  
 }
 
 

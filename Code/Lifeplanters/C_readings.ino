@@ -33,6 +33,7 @@ float read_process_Param(String device, uint8_t &index, const uint8_t &arrsize, 
   else if(device =="light"){param_array[index] = soilSensor1.getLight();}
 
   else if(device =="temp"){param_array[index] = soilSensor1.getTemperature();}  
+
   index++;
   if(index >= arrsize){index=0;}
 
