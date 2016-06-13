@@ -3,17 +3,46 @@
 
 void readMoisture()
 {
-  raw_moisture[raw_moist_index] = soilSensor1.getCapacitance();
-  raw_moist_index++;                  // <<<<<<<<<<<<<<<<<<<<<<< Breaks when index is larger than declared size
+  if(debug){
+    Serial.println("Key in mositure reading");
+    Serial.flush();
+    while(!Serial.available()){}    // Pause for user input on serial terminal
+    raw_moisture[raw_moist_index++]     = Serial.parseInt();
+    } 
+  else{raw_moisture[raw_moist_index++]  = soilSensor1.getCapacitance();}
+  
+  raw_moist_index = raw_moist_index %MOIST_SIZE;                  
   filter_moist = mov_avg(raw_moisture, MOIST_SIZE); 
+  
+  if(debug){
+    Serial.print("Moisture array: ");
+    for(int i; i < MOIST_SIZE; i++){
+      Serial.print(raw_moisture[i]); Serial.print(' ');
+      }
+    Serial.print("Moisture reading: ");   Serial.println(filter_moist);
+    }
 }
 
 void readLight()
 {
-  raw_light[raw_light_index] = soilSensor1.getLight(true); //when .getLight(bool) takes in a TRUE, it reads the light for 3 seconds before returning the value. This means that if the array size is 5, if takes 15 seconds to filter the data. take note
-  raw_light_index++;
-  if(raw_light_index >=5){ raw_light_index = 0;}
+  if(debug){
+      Serial.println("Key in light reading");
+      Serial.flush();
+      while(!Serial.available()){}    // Pause for user input on serial terminal
+      raw_light[raw_light_index++]     = Serial.parseInt();
+      } 
+  else{raw_light[raw_light_index++] = soilSensor1.getLight(true);} //when .getLight(bool) takes in a TRUE, it reads the light for 3 seconds before returning the value. This means that if the array size is 5, if takes 15 seconds to filter the data. take note
+  
+  raw_light_index = raw_light_index %LIGHT_SIZE;
   filter_light = mov_avg(raw_light, LIGHT_SIZE);
+
+  if(debug){
+    Serial.print("Light array: ");
+    for(int i; i < LIGHT_SIZE; i++){
+      Serial.print(raw_light[i]); Serial.print(' ');
+      }
+    Serial.print("Light reading: ");   Serial.println(filter_light);
+    }
 }
 
 void readTemp()

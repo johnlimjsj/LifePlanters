@@ -17,6 +17,11 @@ void pump1(byte pump_pin, int percent_time_on)
   
   digitalWrite(pump_pin, LOW); // turn off pump
   delay(time_off); 
+
+  if(debug){
+    Serial.print("Turning the pump on for: ");    Serial.println(time_on);
+    Serial.print("Turning the pump off for: ");   Serial.println(time_off);
+  }        
 } // end of pump
 
 
@@ -41,10 +46,15 @@ void pump1(byte pump_pin, int percent_time_on)
       // turn on pump
     }
     if(millis()-last_time > time_on){
-      last_time=millis()
+      last_time=millis();
     }
     digitalWrite(pump_pin, LOW); // turn off pump
   }
+
+  if(debug){
+    Serial.print("Turning the pump on for: ");   Serial.println(time_on);
+    Serial.print("Turning the pump off for: ");   Serial.println(time_off);
+  }        
 // last_time = millis();
  }
 

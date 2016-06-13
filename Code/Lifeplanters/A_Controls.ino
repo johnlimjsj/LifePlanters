@@ -6,15 +6,23 @@ void control_1(String device, byte device_num, float desired_output)
   if(device=="pump")
   {   readMoisture();
       float curr_reading = filter_moist;
-      
       int pid_out = PID(1, 0, 0, desired_output, curr_reading);
       int pump_time = (int)mapping(0, LOOP_TIME, pid_out, -100, 100, 5);// (out_min, out_max, input_reading, in_min, in_max, mode)
+      
+      if(debug){
+        Serial.print("pid_out: ");   Serial.println(pid_out);
+        };
+        
       pump1(device_num, pump_time);
   }
   else if(device =="light")
   {  readLight();
      float curr_reading = filter_light;
      int pid_out = PID(1, 0, 0, desired_output, curr_reading);
+
+     if(debug){
+        Serial.print("pid_out: ");   Serial.println(pid_out);
+        };
   }
 }
 

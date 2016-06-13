@@ -39,6 +39,8 @@ float filter_moist, filter_light, filter_temp;
 int last_err=0;
 int err_sum=0;
 
+const bool debug = 0;     // Sets debug mode to 0 - False, 1 - True
+
 void setup() {
   
   // Setting up I2C once
@@ -67,8 +69,6 @@ void setup() {
 void loop() {
   control_1("pump", PUMP1_PIN, 60.00); // moisture in percentage
   control_1("light", LIGHT1_PIN, 50.55); // light in percentage
-
-
 }
 
 // to initialize null arrays
