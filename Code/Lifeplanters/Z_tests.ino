@@ -58,6 +58,31 @@ void print_array()
 
 /* ====== End of test of moving average algorithm ======== */
 
+/* ================== Test for Mapping =================== */
+// Result: Incomplete
+void testMappingFunction(){
+  float result;
+  result = mapping(-10, 10, 2.0, 0.0, 20.0, 1);
+  if(result == null){
+    Serial.println("Null check");
+    }
+
+  result = mapping(-10, 10, 2.0, 0.0, 20.0, 0);
+  if(result == -8.0){
+    Serial.println("Linear mapping check");
+    }
+
+  result = mapping(-10, 10, -1.0, 0.0, 20.0, 0);
+  if(result == -10.0){
+    Serial.println("Lower bound check");
+    }
+
+  result = mapping(-10, 10, 22.0, 0.0, 20.0, 0);
+  if(result == 10.0){
+    Serial.println("Upper bound check");
+    }  
+  }
+
 
 
 
