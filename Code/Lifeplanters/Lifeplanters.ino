@@ -5,7 +5,6 @@
 #define LIGHT1_PIN 9 //this must be a PWM pin
 #define PH_PIN A1;
 
-
 #define SENSOR1_ADDR 0x20
 
 #define null 1234567

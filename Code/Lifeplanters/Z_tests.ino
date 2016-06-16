@@ -84,11 +84,11 @@ void testMappingFunction(){
   }
 
 
-
-
-
-
-
-
-
- 
+/* ================== Test for Pump 1 =================== */
+// Result: Incomplete
+void pump1_test(){
+  unsigned long now = millis();
+  pump1(PUMP1_PIN, 70);  // Turns the pump on for 70 %
+  unsigned long then = millis();
+  Serial.print("Pump was running for: "); Serial.println(then - now);
+}
