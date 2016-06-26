@@ -38,8 +38,6 @@ void control_1b(String device, byte device_num, float &desired_output)
   }
   
   float curr_reading = *point_filter;
-  int pid_out = PID(*point_kp, *point_ki, *point_kd, desired_output, curr_reading);
-  int process_var = (int)mapping(*point_outmin, *point_outmax, pid_out, *point_inmin, *point_inmax, mode);
   
     // device actuation
   if(device=="pump")

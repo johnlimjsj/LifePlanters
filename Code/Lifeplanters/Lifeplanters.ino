@@ -5,7 +5,6 @@
 #define LIGHT1_PIN 9 //this must be a PWM pin
 #define PH_PIN A1;
 
-
 #define SENSOR1_ADDR 0x20
 
 #define null 1234567
@@ -69,8 +68,8 @@ void loop() {
 //  control_1("light", LIGHT1_PIN, 50.55); // light in percentage
 
 //   pump2_test(5);
-  mov_avg_test();
-
+//  mov_avg_test();
+  testMappingFunction();
 }
 
 // to initialize null arrays
