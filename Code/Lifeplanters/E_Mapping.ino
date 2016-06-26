@@ -2,9 +2,9 @@
 
 
 
-float mapping(int out_min, int out_max, long in_reading, long in_min, long in_max, uint8_t mode)
+double mapping(long out_min, long out_max, long in_reading, long in_min, long in_max, uint8_t mode)
 {
-  float out_reading;
+  double out_reading;
   // Saturation limits
   if(in_reading>in_max){in_reading = in_max;}
   if(in_reading<in_min){in_reading = in_min;}
@@ -15,8 +15,12 @@ float mapping(int out_min, int out_max, long in_reading, long in_min, long in_ma
       out_reading = null;         
       break;
     }
-    default:{ // linear mapping
-      out_reading = out_min + (out_max - out_min)*((in_reading - in_min)/(in_max - in_min));
+    case 2:{ //inverse linear mapping
+      out_reading = (double)out_max - (double)(out_max - out_min)*((double)(in_reading - in_min)/(in_max - in_min));
+      break;
+    }
+    default:{ // linear mapping      
+      out_reading = out_min + (double)(out_max - out_min)*(double)((double)(in_reading - in_min)/(in_max - in_min));
     }
   }
   return out_reading;

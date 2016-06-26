@@ -1,7 +1,9 @@
+#include <RunningAverage.h>
 #include <Wire.h>
 #include <I2CSoilMoistureSensor.h>
+
 // Constants
-#define PUMP1_PIN 13 //specifying which digital pin controls the pump
+#define PUMP1_PIN 5 //specifying which digital pin controls the pump
 #define LIGHT1_PIN 9 //this must be a PWM pin
 #define PH_PIN A1;
 
@@ -33,7 +35,7 @@ uint32_t raw_moisture[MOIST_SIZE], raw_light[LIGHT_SIZE], raw_temp[TEMP_SIZE];
 
 // raw_reading array indexes
 uint8_t raw_moist_index=0, raw_light_index=0, raw_temp_index=0;
-float filter_moist, filter_light, filter_temp;
+double filter_moist, filter_light, filter_temp;
 
 int last_err=0;
 int err_sum=0;
@@ -64,12 +66,18 @@ void setup() {
 }
 
 void loop() {
-//  control_1("pump", PUMP1_PIN, 60.00); // moisture in percentage
+//  control_1("pump", PUMP1_PIN, 50.00); // moisture in percentage
 //  control_1("light", LIGHT1_PIN, 50.55); // light in percentage
-
+//   light2_test(10);
 //   pump2_test(5);
-//  mov_avg_test();
-  testMappingFunction();
+//  mov_avg1_test();
+//  testMappingFunction();
+//  pid_test();
+//  test_readMoisture();
+//  test_readLight();
+//  control_test();
+  control_light_test();
+//  sensor_test();
 }
 
 // to initialize null arrays

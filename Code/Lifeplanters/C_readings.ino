@@ -1,20 +1,26 @@
 
 
 
-void readMoisture()
+void readMoisture(long reading)
 {
-  raw_moisture[raw_moist_index] = soilSensor1.getCapacitance();
+  raw_moisture[raw_moist_index] = reading;
   raw_moist_index++;
   if(raw_moist_index>=MOIST_SIZE){raw_moist_index=0;}
   filter_moist = mov_avg(raw_moisture, MOIST_SIZE); 
+  filter_moist = mapping(0, 100, filter_moist, 236, 655, 0); //(int out_min, int out_max, long in_reading, long in_min, long in_max, uint8_t mode)
 }
 
-void readLight()
+void readLight(long reading)
 {
-  raw_light[raw_light_index] = soilSensor1.getLight(true); //when .getLight(bool) takes in a TRUE, it reads the light for 3 seconds before returning the value. This means that if the array size is 5, if takes 15 seconds to filter the data. take note
+  serial_printresult("Reading is: ", reading);
+  raw_light[raw_light_index] = reading; //when .getLight(bool) takes in a TRUE, it reads the light for 3 seconds before returning the value. This means that if the array size is 5, if takes 15 seconds to filter the data. take note
   raw_light_index++;
-  if(raw_light_index >=5){ raw_light_index = 0;}
+  if(raw_light_index >=LIGHT_SIZE){ raw_light_index = 0;}
   filter_light = mov_avg(raw_light, LIGHT_SIZE);
+//  filter_light = reading;
+  serial_printresult("filter_light is: ", filter_light);
+  filter_light = mapping(0, 100, filter_light, 236, 60000, 2);
+  serial_printresult("mapping of filter_light is: ", filter_light);
 }
 
 void readTemp()
