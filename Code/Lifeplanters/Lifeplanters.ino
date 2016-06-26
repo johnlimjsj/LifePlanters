@@ -68,8 +68,8 @@ void loop() {
 //  control_1("light", LIGHT1_PIN, 50.55); // light in percentage
 
 //   pump2_test(5);
-  mov_avg_test();
-
+//  mov_avg_test();
+  testMappingFunction();
 }
 
 // to initialize null arrays

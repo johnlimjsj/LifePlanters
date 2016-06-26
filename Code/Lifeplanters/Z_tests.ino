@@ -62,25 +62,34 @@ void print_array()
 // Result: Incomplete
 void testMappingFunction(){
   float result;
-  result = mapping(-10, 10, 2.0, 0.0, 20.0, 1);
-  if(result == null){
-    Serial.println("Null check");
-    }
+  float in_reading;
+  uint8_t mode;
+  
+  Serial.print("Enter in input"); in_reading = Serial.parseInt();
+  Serial.println();
+  Serial.print("Enter in the mode"); mode = Serial.parseInt();
+  Serial.println();
+  
+  result = mapping(-10, 10, in_reading, 0.0, 20.0, mode); // (int out_min, int out_max, long in_reading, long in_min, long in_max, uint8_t mode)
 
-  result = mapping(-10, 10, 2.0, 0.0, 20.0, 0);
-  if(result == -8.0){
-    Serial.println("Linear mapping check");
-    }
-
-  result = mapping(-10, 10, -1.0, 0.0, 20.0, 0);
-  if(result == -10.0){
-    Serial.println("Lower bound check");
-    }
-
-  result = mapping(-10, 10, 22.0, 0.0, 20.0, 0);
-  if(result == 10.0){
-    Serial.println("Upper bound check");
-    }  
+  if(result==null){Serial.println("The input is indeed null. I should see a print statement before this to say the input is null. Check!");}
+  
+  Serial.print("The mapped output is: "); Serial.print(result);
+  
+//  result = mapping(-10, 10, 2.0, 0.0, 20.0, 0);
+//  if(result == -8.0){
+//    Serial.println("Linear mapping check");
+//    }
+//
+//  result = mapping(-10, 10, -1.0, 0.0, 20.0, 0);
+//  if(result == -10.0){
+//    Serial.println("Lower bound check");
+//    }
+//
+//  result = mapping(-10, 10, 22.0, 0.0, 20.0, 0);
+//  if(result == 10.0){
+//    Serial.println("Upper bound check");
+//    }  
   }
 
 

@@ -8,6 +8,7 @@ float mapping(int out_min, int out_max, long in_reading, long in_min, long in_ma
   // Saturation limits
   if(in_reading>in_max){in_reading = in_max;}
   if(in_reading<in_min){in_reading = in_min;}
+  if(in_reading == null){Serial.println("null input into the mapping function"); return null;};
   switch(mode)
   {
     case 1:{
