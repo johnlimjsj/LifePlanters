@@ -1,0 +1,290 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document http://www.reportlab.com
+% 'BasicFonts': class PDFDictionary 
+1 0 obj
+% The standard fonts dictionary
+<< /F1 2 0 R
+ /F2 3 0 R >>
+endobj
+% 'F1': class PDFType1Font 
+2 0 obj
+% Font Helvetica
+<< /BaseFont /Helvetica
+ /Encoding /WinAnsiEncoding
+ /Name /F1
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F2': class PDFType1Font 
+3 0 obj
+% Font Helvetica-Bold
+<< /BaseFont /Helvetica-Bold
+ /Encoding /WinAnsiEncoding
+ /Name /F2
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'Page1': class PDFPage 
+4 0 obj
+% Page dictionary
+<< /Contents 27 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 26 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'R5': class PDFCatalog 
+5 0 obj
+% Document Root
+<< /Outlines 7 0 R
+ /PageMode /UseNone
+ /Pages 26 0 R
+ /Type /Catalog >>
+endobj
+% 'R6': class PDFInfo 
+6 0 obj
+<< /Author ()
+ /CreationDate (D:20160601075333+08'00')
+ /Creator (\(unspecified\))
+ /Keywords ()
+ /Producer (pisa HTML to PDF <http://www.htmltopdf.org>)
+ /Subject ()
+ /Title () >>
+endobj
+% 'R7': class PDFOutlines 
+7 0 obj
+<< /Count 4
+ /First 8 0 R
+ /Last 8 0 R
+ /Type /Outlines >>
+endobj
+% 'Outline.0': class OutlineEntryObject 
+8 0 obj
+<< /Count -2
+ /Dest [ 4 0 R
+ /Fit ]
+ /First 9 0 R
+ /Last 10 0 R
+ /Parent 7 0 R
+ /Title (Invoice) >>
+endobj
+% 'Outline.2.0': class OutlineEntryObject 
+9 0 obj
+<< /Dest [ 4 0 R
+ /Fit ]
+ /Next 10 0 R
+ /Parent 8 0 R
+ /Title (Invoice) >>
+endobj
+% 'Outline.2.1': class OutlineEntryObject 
+10 0 obj
+<< /Count -1
+ /Dest [ 4 0 R
+ /Fit ]
+ /First 11 0 R
+ /Last 11 0 R
+ /Parent 8 0 R
+ /Prev 9 0 R
+ /Title (Tindie) >>
+endobj
+% 'Outline.3.0': class OutlineEntryObject 
+11 0 obj
+<< /Count -14
+ /Dest [ 4 0 R
+ /Fit ]
+ /First 12 0 R
+ /Last 25 0 R
+ /Parent 10 0 R
+ /Title (Items Ordered) >>
+endobj
+% 'Outline.4.0': class OutlineEntryObject 
+12 0 obj
+<< /Dest [ 4 0 R
+ /Fit ]
+ /Next 13 0 R
+ /Parent 11 0 R
+ /Title (Items Ordered) >>
+endobj
+% 'Outline.4.1': class OutlineEntryObject 
+13 0 obj
+<< /Dest [ 4 0 R
+ /Fit ]
+ /Next 14 0 R
+ /Parent 11 0 R
+ /Prev 12 0 R
+ /Title (Item) >>
+endobj
+% 'Outline.4.2': class OutlineEntryObject 
+14 0 obj
+<< /Dest [ 4 0 R
+ /Fit ]
+ /Next 15 0 R
+ /Parent 11 0 R
+ /Prev 13 0 R
+ /Title (Unit Price) >>
+endobj
+% 'Outline.4.3': class OutlineEntryObject 
+15 0 obj
+<< /Dest [ 4 0 R
+ /Fit ]
+ /Next 16 0 R
+ /Parent 11 0 R
+ /Prev 14 0 R
+ /Title (Qty) >>
+endobj
+% 'Outline.4.4': class OutlineEntryObject 
+16 0 obj
+<< /Dest [ 4 0 R
+ /Fit ]
+ /Next 17 0 R
+ /Parent 11 0 R
+ /Prev 15 0 R
+ /Title (Price) >>
+endobj
+% 'Outline.4.5': class OutlineEntryObject 
+17 0 obj
+<< /Dest [ 4 0 R
+ /Fit ]
+ /Next 18 0 R
+ /Parent 11 0 R
+ /Prev 16 0 R
+ /Title (I2C Soil moisture sensor ) >>
+endobj
+% 'Outline.4.6': class OutlineEntryObject 
+18 0 obj
+<< /Dest [ 4 0 R
+ /Fit ]
+ /Next 19 0 R
+ /Parent 11 0 R
+ /Prev 17 0 R
+ /Title ($13.00) >>
+endobj
+% 'Outline.4.7': class OutlineEntryObject 
+19 0 obj
+<< /Dest [ 4 0 R
+ /Fit ]
+ /Next 20 0 R
+ /Parent 11 0 R
+ /Prev 18 0 R
+ /Title (3) >>
+endobj
+% 'Outline.4.8': class OutlineEntryObject 
+20 0 obj
+<< /Dest [ 4 0 R
+ /Fit ]
+ /Next 21 0 R
+ /Parent 11 0 R
+ /Prev 19 0 R
+ /Title ($39.00) >>
+endobj
+% 'Outline.4.9': class OutlineEntryObject 
+21 0 obj
+<< /Dest [ 4 0 R
+ /Fit ]
+ /Next 22 0 R
+ /Parent 11 0 R
+ /Prev 20 0 R
+ /Title (Sub total: $39.00) >>
+endobj
+% 'Outline.4.10': class OutlineEntryObject 
+22 0 obj
+<< /Dest [ 4 0 R
+ /Fit ]
+ /Next 23 0 R
+ /Parent 11 0 R
+ /Prev 21 0 R
+ /Title (Shipping:  $7.00 ) >>
+endobj
+% 'Outline.4.11': class OutlineEntryObject 
+23 0 obj
+<< /Dest [ 4 0 R
+ /Fit ]
+ /Next 24 0 R
+ /Parent 11 0 R
+ /Prev 22 0 R
+ /Title (Gift Card Amount: -$0.00 ) >>
+endobj
+% 'Outline.4.12': class OutlineEntryObject 
+24 0 obj
+<< /Dest [ 4 0 R
+ /Fit ]
+ /Next 25 0 R
+ /Parent 11 0 R
+ /Prev 23 0 R
+ /Title (Total: $46.00) >>
+endobj
+% 'Outline.4.13': class OutlineEntryObject 
+25 0 obj
+<< /Dest [ 4 0 R
+ /Fit ]
+ /Parent 11 0 R
+ /Prev 24 0 R
+ /Title (Additional Details) >>
+endobj
+% 'R26': class PDFPages 
+26 0 obj
+% page tree
+<< /Count 1
+ /Kids [ 4 0 R ]
+ /Type /Pages >>
+endobj
+% 'R27': class PDFStream 
+27 0 obj
+% page stream
+<< /Filter [ /ASCII85Decode
+ /FlateDecode ]
+ /Length 1280 >>
+stream
+Gb"/'968iG&AEM2s']Q/K@AN[hB730mFY9*D=*4ojhaV`_GhddMFtng4s8+*5WoBV[SN0#3$b`cm^J*Md"2D)q3(;0MZGGXG]ul4;"-[OiJ<+NJbT06d=92,GNG)h#jNSQ-'t:36;j;B=_nre3$\)5ntZh%_2mV$'7hu+253Kc7"??]@E@K#&k0`_f<goT<"qH6q9?XhaZ0*f7^MS9ptrme[3Tos'>*#D:f/JEA$<_qO-4cFQlu!^k@&9^6%p12d=,3,(0@4BWL+;d/"-STl>ZYWRthl?YKh\LL07*V@!hHkn,QFY!l[R!Ji[NW!YhE'fjKO?HV-3.&n;b5l&_:J`\s=(1sa#m5DA>Ob!Vg1[jb()"Ko'RR75;%H4#u`d%"Lo)W]u]U0/Bn@ubh-O!<`#MH5J3csJ.d\s_KqGVU0:E<B;2rR#jF*Omdio>;AVaK;#-fWp<;Er;;R9jeSsQ@Eb>bLN:cCUfGBH(63A"Q.+-'t.m::@^)3JilYh?i_@teT,Nt(WH$FICoilJ&=_M:hZLBeQgKZ[JZR4!>Tnfno-Tg%mmOff#.-tq"FFGK&E6q?P'Cg#]k9*6&bCh?:)3=L\$(3?s'l;6FG""7bJF4Z6c/Z%7.nh>`9Kja4NuMZ)cNHQZ19o/KM\gP$FquTVOE-9Lra7r-8gh65X[2XYhJ=2S<Z7N%rk94\$YM7>*J^_YPm7B^"0[rH,SaKf".:)Jb0H`bmZBbA/>L6t%"E_VNE"P?u*_N><)'d5#'?+Y:NAR:ZOYHRMH[O<T_8Ht1_=j0kHne5<?'(DS0tKG._D.b-kr.J6[kbOe^`CP40KiVNVT>^/edfP(GTY5Wu7c%EtqFBI:(H<KhAlcZ+b1^HV"?_dMq./@=3.uU^pUR1PfHP\X('$B#ihaF)X\.$U?A/(rB,X7'j2qT<m3U>SJO=ia&nM^n,iQ=a@IO,UZ/^fr?mA)1Y/EhM_H]#RUMFU#`.JO/W0aMk"'cpB:irZ*=F2\Po+)9$nA(JkmnU5B_.>=uV=>SccmK,GS$*3rdrn+>i4l(bY!]Kt@'WA+&N1lqKA8UGjX,G_O=7Y@\l6_5iCk/pUPG\njlYECr>b\d.B#E)8mIXS,`D8@/9tNfnq*)H.n#WaanJh@?^(5/:%i(==Zj'g(3I8#?"*N]BZNaK3DS@[K5]&LbFAu,Xf+'D"T7,M^f>k=<pRA*uqu(<Lg3oEeSfI<=jXGu`d<m!8Y;WQ#4GXcrJL>mr`O!:?f^_Z.2tH3$&H(cE-(8=8pFq9\URtTRpW!~>endstream
+endobj
+xref
+0 28
+0000000000 65535 f
+0000000113 00000 n
+0000000221 00000 n
+0000000386 00000 n
+0000000559 00000 n
+0000000838 00000 n
+0000000973 00000 n
+0000001206 00000 n
+0000001328 00000 n
+0000001496 00000 n
+0000001637 00000 n
+0000001820 00000 n
+0000001998 00000 n
+0000002147 00000 n
+0000002302 00000 n
+0000002463 00000 n
+0000002617 00000 n
+0000002773 00000 n
+0000002949 00000 n
+0000003106 00000 n
+0000003258 00000 n
+0000003415 00000 n
+0000003584 00000 n
+0000003753 00000 n
+0000003930 00000 n
+0000004095 00000 n
+0000004231 00000 n
+0000004338 00000 n
+trailer
+<< /ID 
+ % ReportLab generated PDF document -- digest (http://www.reportlab.com) 
+ [(\010\331\261\207\372\253\230\301\024\003]\327\334\317\331{) (\010\331\261\207\372\253\230\301\024\003]\327\334\317\331{)] 
+
+ /Info 6 0 R
+ /Root 5 0 R
+ /Size 28 >>
+startxref
+5734
+%%EOF
