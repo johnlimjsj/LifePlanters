@@ -1,19 +1,19 @@
 // Controller 1:
-void control_1(String device, byte pump_pin, float desired_output)
+void control_1(String device, byte device_pin, float desired_output)
 {
    if(device=="pump")
   { 
     uint16_t moisture_reading = soilSensor1.getCapacitance();
 //    int moisture_reading = serial_readbuff("Enter in soil moisture: ");
     readMoisture(moisture_reading);
-    pump2(pump_pin, desired_output, filter_moist); // what pump 2 does is that it turns pump on once moisture falls below a threshold. And then stops until the moisture reaches the desired. 
+    pump2(device_pin, desired_output, filter_moist); // what pump 2 does is that it turns pump on once moisture falls below a threshold. And then stops until the moisture reaches the desired. 
   }
   else if(device =="light")
   {  
-//     uint32_t darkness_reading = soilSensor1.getLight(true); // when dark, .getLight() gives a very high number
-     uint32_t darkness_reading = serial_readbuff("Enter in darkness level: ");
+     uint32_t darkness_reading = soilSensor1.getLight(true); // when dark, .getLight() gives a very high number
+//     uint32_t darkness_reading = serial_readbuff("Enter in darkness level: ");
      readLight(darkness_reading);
-     light2(10, filter_light);
+     light2(device_pin, filter_light);
   }
 }
 

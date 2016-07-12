@@ -4,7 +4,7 @@
 
 // Constants
 #define PUMP1_PIN 5 //specifying which digital pin controls the pump
-#define LIGHT1_PIN 9 //this must be a PWM pin
+#define LIGHT1_PIN 10 //this must be a PWM pin
 #define PH_PIN A1;
 
 #define SENSOR1_ADDR 0x20
@@ -66,8 +66,8 @@ void setup() {
 }
 
 void loop() {
-//  control_1("pump", PUMP1_PIN, 50.00); // moisture in percentage
-//  control_1("light", LIGHT1_PIN, 50.55); // light in percentage
+//  control_1("pump", PUMP1_PIN, 60.00); // moisture in percentage
+  control_1("light", LIGHT1_PIN, 50.55); // light in percentage
 //   light2_test(10);
 //   pump2_test(5);
 //  mov_avg1_test();
@@ -76,7 +76,7 @@ void loop() {
 //  test_readMoisture();
 //  test_readLight();
 //  control_test();
-  control_light_test();
+//  control_light_test();
 //  sensor_test();
 }
 
