@@ -1,6 +1,8 @@
-#include <RunningAverage.h>
+
 #include <Wire.h>
-#include <I2CSoilMoistureSensor.h>
+#include <SerialReadPrint.h>
+#include <LifePlanters.h>
+
 
 // Constants
 #define PUMP1_PIN 5 //specifying which digital pin controls the pump
@@ -22,13 +24,13 @@ const uint8_t TEMP_SIZE=5;
 // PID constants
 const int kp_m=1, ki_m=0, kd_m=0;
 
-
+uint8_t hello = A0;
 // mapping limits
 const int in_min_moist=0, in_max_moist=100, out_min_moist=-100, out_max_moist=100; 
 
 // constructors
-I2CSoilMoistureSensor soilSensor1 (SENSOR1_ADDR); // 0x20 is the default address of the sensor. need to add more addresses for more sensors
-
+LifePlanters soilSensor1 (SENSOR1_ADDR); // 0x20 is the default address of the sensor. need to add more addresses for more sensors
+SerialReadPrint serialRP;
 // global arrays to store data
 uint32_t raw_moisture[MOIST_SIZE], raw_light[LIGHT_SIZE], raw_temp[TEMP_SIZE];
 
@@ -45,7 +47,7 @@ void setup() {
   // Setting up I2C once
   Wire.begin();
   Serial.begin(9600);
-  
+  Serial.println(hello);
   soilSensor1.begin(); // reset sensor
   delay(1000); // give some time to boot up
 

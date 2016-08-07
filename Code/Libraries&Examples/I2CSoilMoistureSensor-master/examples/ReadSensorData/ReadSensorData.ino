@@ -1,7 +1,7 @@
 #include <I2CSoilMoistureSensor.h>
 #include <Wire.h>
 
-I2CSoilMoistureSensor sensor;
+I2CSoilMoistureSensor sensor(0x21);
 
 void setup() {
   Wire.begin();
