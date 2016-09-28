@@ -28,7 +28,7 @@ public class ada_neopixel_init  extends TranslatorBlock {
 			translatorBlock = this.getRequiredTranslatorBlockAtSocket(3);
 			NEO_RGB = translatorBlock.toCode();
 			
-			translator.addHeaderFile("Adafruit_NeoPixel.h");
+			translator.addHeaderFile("AdafruitJohn_NeoPixel.h");
 			translator.addDefinitionCommand("Adafruit_NeoPixel strip_pin"+Pin+" = Adafruit_NeoPixel("+NbLed+","+ Pin +", " +NEO_RGB+ " + "+NEO_KHZ800 +");");
 			translator.addSetupCommand("strip_pin"+Pin+".begin();\n" +
 			"strip_pin"+Pin+".show();");

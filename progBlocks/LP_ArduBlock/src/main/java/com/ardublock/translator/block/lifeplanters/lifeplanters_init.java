@@ -6,7 +6,7 @@ import com.ardublock.translator.block.exception.SocketNullException;
 import com.ardublock.translator.block.exception.SubroutineNotDeclaredException;
 
 public class lifeplanters_init  extends TranslatorBlock {
-
+	
 	public lifeplanters_init (Long blockId, Translator translator, String codePrefix, String codeSuffix, String label)
 	{
 		super(blockId, translator, codePrefix, codeSuffix, label);
@@ -15,24 +15,29 @@ public class lifeplanters_init  extends TranslatorBlock {
 	//@Override
 		public String toCode() throws SocketNullException, SubroutineNotDeclaredException
 		{
-			String addr ;
-			String motorPin;
-			String ledPin;
-
+			String name;
+			String addr;
+			String pump_Pin, light_Pin, feeder_Pin;
+			
 			TranslatorBlock translatorBlock = this.getRequiredTranslatorBlockAtSocket(0);
-			addr = translatorBlock.toCode();
+			name = translatorBlock.toCode();
 			translatorBlock = this.getRequiredTranslatorBlockAtSocket(1);
-			motorPin = translatorBlock.toCode();
+			addr = translatorBlock.toCode();
 			translatorBlock = this.getRequiredTranslatorBlockAtSocket(2);
-			ledPin = translatorBlock.toCode();
+			pump_Pin = translatorBlock.toCode();
+			translatorBlock = this.getRequiredTranslatorBlockAtSocket(3);
+			light_Pin = translatorBlock.toCode();
+			translatorBlock = this.getRequiredTranslatorBlockAtSocket(4);
+			feeder_Pin = translatorBlock.toCode();
 			
 			translator.addHeaderFile("Wire.h");
 			translator.addHeaderFile("LifePlanters.h");
-			translator.addDefinitionCommand("LifePlanters planter"+addr+"("+addr+", "+motorPin+", "+ledPin);
+			translator.addDefinitionCommand("LifePlanters planter"+name+"("+addr+", " + pump_Pin + ", " + light_Pin + ", " + feeder_Pin +" );");
 			translator.addSetupCommand("Wire.begin();\n" +
-			"Serial.begin();");
+			"Serial.begin(9600);");
 			
 			
 			return "" ;	
+
 		}
 }

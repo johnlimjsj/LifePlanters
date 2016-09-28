@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="com.ardublock.MainTest" duration-ms="34" started-at="2016-09-27T16:08:21Z" finished-at="2016-09-27T16:08:21Z">
+  <suite name="com.ardublock.MainTest" duration-ms="19" started-at="2016-09-28T22:51:28Z" finished-at="2016-09-28T22:51:28Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="34" started-at="2016-09-27T16:08:21Z" finished-at="2016-09-27T16:08:21Z">
+    <test name="Command line test" duration-ms="19" started-at="2016-09-28T22:51:28Z" finished-at="2016-09-28T22:51:28Z">
       <class name="com.ardublock.MainTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.ardublock.MainTest@96532d6]" name="setUp" is-config="true" duration-ms="16" started-at="2016-09-27T16:08:21Z" finished-at="2016-09-27T16:08:21Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.ardublock.MainTest@96532d6]" name="setUp" is-config="true" duration-ms="10" started-at="2016-09-28T22:51:28Z" finished-at="2016-09-28T22:51:28Z">
         </test-method>
-        <test-method status="PASS" signature="testFiles()[pri:0, instance:com.ardublock.MainTest@96532d6]" name="testFiles" duration-ms="1" started-at="2016-09-27T16:08:21Z" finished-at="2016-09-27T16:08:21Z">
+        <test-method status="PASS" signature="testFiles()[pri:0, instance:com.ardublock.MainTest@96532d6]" name="testFiles" duration-ms="1" started-at="2016-09-28T22:51:28Z" finished-at="2016-09-28T22:51:28Z">
         </test-method>
-        <test-method status="PASS" signature="testSingleLoop()[pri:0, instance:com.ardublock.MainTest@96532d6]" name="testSingleLoop" duration-ms="0" started-at="2016-09-27T16:08:21Z" finished-at="2016-09-27T16:08:21Z">
+        <test-method status="PASS" signature="testSingleLoop()[pri:0, instance:com.ardublock.MainTest@96532d6]" name="testSingleLoop" duration-ms="0" started-at="2016-09-28T22:51:28Z" finished-at="2016-09-28T22:51:28Z">
         </test-method>
       </class>
     </test>

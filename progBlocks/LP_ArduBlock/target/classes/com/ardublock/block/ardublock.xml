@@ -10465,14 +10465,18 @@
 				<text>lifeplanters_init</text>
 			</description>
 			<BlockConnectors>
-				<BlockConnector connector-type="number" connector-kind="socket" label="Sensor Addr">
+				<BlockConnector connector-type="string" connector-kind="socket" label="Give a Name" />
+				<BlockConnector connector-type="number" connector-kind="socket" label="Addr">
 					<DefaultArg genus-name="number" label="0x20" />
 				</BlockConnector>
-				<BlockConnector connector-type="number" connector-kind="socket" label="Motor Pin">
-					<DefaultArg genus-name="number" label="4" />
+				<BlockConnector connector-type="number" connector-kind="socket" label="Pump Pin">
+					<DefaultArg genus-name="number" label="5" />
 				</BlockConnector>
 				<BlockConnector connector-type="number" connector-kind="socket" label="LED Pin">
 					<DefaultArg genus-name="number" label="9" />
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="Feeder Pin">
+					<DefaultArg genus-name="number" label="8" />
 				</BlockConnector>
 			</BlockConnectors>
 				<Images>
@@ -10482,30 +10486,25 @@
 			</Images>
 		</BlockGenus>
 
-		<BlockGenus name="lp_getmoisture" kind="data" color="5 210 10" initlabel="bg.lp_getmoisture">
-			<description>
-				<text>lp_getmoisture</text>
-			</description>
+		<BlockGenus name="lp_getmoisture" kind="function" color="5 210 10" initlabel="bg.lp_getmoisture">
 			<BlockConnectors>
-				<BlockConnector connector-type="number" connector-kind="plug" position-type="mirror" />
+				<BlockConnector connector-type="number" connector-kind="plug" />
+				<BlockConnector connector-type="string" connector-kind="socket" label="Name"/>
 			</BlockConnectors>
 		</BlockGenus>
 
-		<BlockGenus name="lp_getlight" kind="data" color="5 210 10" initlabel="bg.lp_getlight">
-			<description>
-				<text>lp_getlight</text>
-			</description>
+		<!-- New getlight methodology -->
+		<BlockGenus name="lp_getlight" kind="function" color="5 210 10" initlabel="bg.lp_getlight">
 			<BlockConnectors>
-				<BlockConnector connector-type="number" connector-kind="plug" position-type="mirror" />
+				<BlockConnector connector-type="number" connector-kind="plug" />
+				<BlockConnector connector-type="string" connector-kind="socket" label="Name"/>
 			</BlockConnectors>
 		</BlockGenus>
 
-		<BlockGenus name="lp_gettemp" kind="data" color="5 210 10" initlabel="bg.lp_gettemp">
-			<description>
-				<text>lp_gettemp</text>
-			</description>
+		<BlockGenus name="lp_gettemp" kind="function" color="5 210 10" initlabel="bg.lp_get">
 			<BlockConnectors>
-				<BlockConnector connector-type="number" connector-kind="plug" position-type="mirror" />
+				<BlockConnector connector-type="number" connector-kind="plug" />
+				<BlockConnector connector-type="string" connector-kind="socket" label="Name"/>
 			</BlockConnectors>
 		</BlockGenus>
 
@@ -10514,7 +10513,8 @@
 				<text>lp_getph</text>
 			</description>
 			<BlockConnectors>
-				<BlockConnector connector-type="number" connector-kind="plug" position-type="mirror" />
+				<BlockConnector connector-type="number" connector-kind="plug" />
+				<BlockConnector connector-type="string" connector-kind="socket" label="Name"/>
 			</BlockConnectors>
 		</BlockGenus>
 
@@ -10522,23 +10522,36 @@
 			<description>
 				<text>lp_printmoisture</text>
 			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="socket" label="Name" />
+			</BlockConnectors>
 		</BlockGenus>
 
 		<BlockGenus name="lp_printlight" kind="command" color="5 210 10" initlabel="bg.lp_printlight">
 			<description>
 				<text>lp_printmoisture</text>
 			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="socket" label="Name" />
+			</BlockConnectors>
 		</BlockGenus>
 
 		<BlockGenus name="lp_printtemp" kind="command" color="5 210 10" initlabel="bg.lp_printtemp">
 			<description>
 				<text>lp_printmoisture</text>
 			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="socket" label="Name" />
+			</BlockConnectors>
 		</BlockGenus>
+
 		<BlockGenus name="lp_printph" kind="command" color="5 210 10" initlabel="bg.lp_printph">
 			<description>
 				<text>lp_printph</text>
 			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="socket" label="Name" />
+			</BlockConnectors>
 		</BlockGenus>
 		
 
@@ -10547,7 +10560,8 @@
 				<text>lp_readtemp</text>
 			</description>
 			<BlockConnectors>
-				<BlockConnector connector-type="boolean" connector-kind="socket" label="">
+				<BlockConnector connector-type="string" connector-kind="socket" label="Name" />
+				<BlockConnector connector-type="boolean" connector-kind="socket" label="" >
 					<DefaultArg genus-name="true" label="TRUE" />
 				</BlockConnector>
 			</BlockConnectors>
@@ -10558,6 +10572,7 @@
 				<text>lp_setlight</text>
 			</description>
 			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="socket" label="Name" />
 				<BlockConnector connector-type="number" connector-kind="socket" label="">
 					<DefaultArg genus-name="number" label="50" />
 				</BlockConnector>
@@ -10569,6 +10584,7 @@
 				<text>lp_setupfeederinterval</text>
 			</description>
 			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="socket" label="Name" />
 				<BlockConnector connector-type="number" connector-kind="socket" label="Hours">
 					<DefaultArg genus-name="number" label="0" />
 				</BlockConnector>
@@ -10591,6 +10607,7 @@
 				<text>lp_setupfeedermech</text>
 			</description>
 			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="socket" label="Name" />
 				<BlockConnector connector-type="number" connector-kind="socket" label="Rest Position">
 					<DefaultArg genus-name="number" label="50" />
 				</BlockConnector>
@@ -11149,6 +11166,7 @@
 			<FamilyMember>Midi_AS</FamilyMember>
 			<FamilyMember>Midi_B</FamilyMember>
 		</BlockFamily>
+
 		
 	</BlockFamilies>
 
@@ -11349,7 +11367,7 @@
 			
 
 			<BlockDrawer button-color="10 240 100" name="bd.lifeplanters" type="factory">
-			    <BlockGenusMember>lifeplanters_init</BlockGenusMember>	
+			   	<BlockGenusMember>lifeplanters_init</BlockGenusMember>	
 			    <BlockGenusMember>lp_getmoisture</BlockGenusMember>	
 			    <BlockGenusMember>lp_getlight</BlockGenusMember>
 			    <BlockGenusMember>lp_gettemp</BlockGenusMember>
@@ -11589,7 +11607,7 @@
 				<BlockGenusMember>Esplora_File_Close</BlockGenusMember>
 			</BlockDrawer> -->
 
-<!-- 			<BlockDrawer button-color="216 5 10" name="bd.adafruit" type="factory">
+			<BlockDrawer button-color="216 5 10" name="bd.adafruit" type="factory">
 				<BlockGenusMember>ada_dc_motor_fwd</BlockGenusMember>
 				<BlockGenusMember>ada_dc_motor_bwd</BlockGenusMember>
 				<BlockGenusMember>ada_dc_motor_release</BlockGenusMember>
@@ -11597,7 +11615,7 @@
 				<BlockGenusMember>ada_neopixel_pixel_colorRGB</BlockGenusMember>
 				<BlockGenusMember>ada_neopixel_show</BlockGenusMember>	
 				<BlockGenusMember>ada_neopixel_Brightness</BlockGenusMember>
-			</BlockDrawer> -->
+			</BlockDrawer>
 
 <!-- 			<BlockDrawer button-color="0 177 236" name="bd.makeblock" type="factory">
 				<BlockGenusMember>me_ultrasonic_sensor</BlockGenusMember>
