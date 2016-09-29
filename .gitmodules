@@ -1,3 +1,3 @@
 [submodule "lib"]
-	path = libs/LifePlanters/lib
+	path = lib/LifePlanters
 	url = https://github.com/johnlimjsj/LifePlantersLib.git
