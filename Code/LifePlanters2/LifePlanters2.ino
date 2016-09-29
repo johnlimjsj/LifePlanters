@@ -12,7 +12,7 @@ void setup() {
 //  planter1.getAllReadings();
 
   planter2.checkStatus();
-  planter2.getAllReadings();
+  planter2.printAllReadings();
 //  planter1.changeSensorAddr(0x20);
   planter2.set_desired_moisture(15);
   planter2.findAllSensors();
