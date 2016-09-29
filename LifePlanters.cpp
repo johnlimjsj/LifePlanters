@@ -10,7 +10,7 @@ RunningAverage runavg_temp(5);
 Servo myfeeder;
 
 /******************************
-Constructors...
+Constructors. Testing for gitsubmodule
 ******************************/
 	LifePlanters::LifePlanters(uint8_t addr) : soilSensor(addr) { // calling another object constructor with my constructor
 	}
